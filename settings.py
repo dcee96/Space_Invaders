@@ -14,13 +14,13 @@ class Settings:
 
         self.alien_points = 50
 
-        self.score_scale = 1.5 
+        self.score_scale = 2.25 
 
         # Bullet Settings.
         self.bullet_height = 15
         self.bullet_width = 5
         self.bullet_color = (255,100, 0)
-        self.bullets_allowed = 2
+        self.bullets_allowed = 5
 
         self.fleet_drop_speed = 14
 
