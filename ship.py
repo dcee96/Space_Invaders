@@ -1,16 +1,22 @@
 import pygame, settings
+from pygame.sprite import Sprite
 
-class Ship:
+class Ship(Sprite):
     """A Class to manange the ship."""
 
-    def __init__(self, aa_game):
+    def __init__(self, aa_game, sb_Ship=0):
         """Intialize the ship at the starting position."""
+        super().__init__()
         self.screen = aa_game.screen
         self.screen_rect = aa_game.screen.get_rect()
 
         # Load the ship into the game and return it rect()
-        self.image = pygame.image.load('C:/Users/coole/Python Code/Space_Invaders/game_assests/8-bitShip_128x97 .png')
-        self.rect = self.image.get_rect()
+        if sb_Ship == 0:
+            self.image = pygame.image.load('C:/Users/coole/Python Code/Space_Invaders/game_assests/8-bitShip_128x97 .png')
+            self.rect = self.image.get_rect()
+        else:
+            self.image = pygame.image.load('C:/Users/coole/Python Code/Space_Invaders/game_assests/8-bitShip_mini.png')
+            self.rect = self.image.get_rect()
 
         #Start each new ship at the bottom middle of the screen.
         self.rect.midbottom = self.screen_rect.midbottom

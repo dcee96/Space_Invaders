@@ -1,12 +1,13 @@
-from re import T
 import pygame.font
-
+from pygame.sprite import Group
+from ship import Ship
 
 class Scoreboard:
     """A class to report and record scoring info."""
 
     def __init__(self, aa_game):
         """Initalize Scorekeeping attributes."""
+        self.aa_game = aa_game
         self.screen = aa_game.screen
         self.screen_rect = self.screen.get_rect()
         self.settings = aa_game.setting
@@ -18,6 +19,9 @@ class Scoreboard:
         
         #Prepare the inital score image.
         self.prep_score()
+
+        #Preparing the indicator of remaining ships.
+        self.prep_ships()
 
     def load_HS(self):
         """Retrive Highscores."""
@@ -69,3 +73,13 @@ class Scoreboard:
         self.screen.blit(self.score_image, self.score_rect)
         self.screen.blit(self.HS_image, self.HS_rect)
         self.screen.blit(self.round_image, self.round_rect)
+        self.ships.draw(self.screen)
+
+    def prep_ships(self):
+        """Show how many ships are left."""
+        self.ships = Group()
+        for ship_number in range(self.stats.ships_left):
+            ship = Ship(self.aa_game, sb_Ship=1)
+            ship.rect.x = self.screen_rect.width - (100 + ship_number * ship.rect.width)
+            ship.rect.y = 10
+            self.ships.add(ship)
