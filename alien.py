@@ -9,7 +9,7 @@ class Alien(Sprite):
         self.settings = aa_game.setting
 
         # Load the rect assests.
-        self.image = pygame.image.load('C:/Users/coole/Python Code/Space_Invaders/game_assests/alien2.png')
+        self.image = pygame.image.load('C:/Users/coole/projects/Python Code/Space_Invaders/game_assests/alien2.png')
         self.rect = self.image.get_rect()
 
         # start each new alien near the topleft.

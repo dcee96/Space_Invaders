@@ -25,7 +25,7 @@ class Scoreboard:
 
     def load_HS(self):
         """Retrive Highscores."""
-        with open("C:/Users/coole/Python Code/Space_Invaders/game_assests/data/game_data.txt", 'r') as HS_data:
+        with open("C:/Users/coole/projects/Python Code/Space_Invaders/game_assests/data/game_data.txt", 'r') as HS_data:
             old_hs = HS_data.read()
             return float(old_hs)   
 

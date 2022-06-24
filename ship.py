@@ -12,10 +12,10 @@ class Ship(Sprite):
 
         # Load the ship into the game and return it rect()
         if sb_Ship == 0:
-            self.image = pygame.image.load('C:/Users/coole/Python Code/Space_Invaders/game_assests/8-bitShip_128x97 .png')
+            self.image = pygame.image.load('C:/Users/coole/projects/Python Code/Space_Invaders/game_assests/8-bitShip_128x97 .png')
             self.rect = self.image.get_rect()
         else:
-            self.image = pygame.image.load('C:/Users/coole/Python Code/Space_Invaders/game_assests/8-bitShip_mini.png')
+            self.image = pygame.image.load('C:/Users/coole/projects/Python Code/Space_Invaders/game_assests/8-bitShip_mini.png')
             self.rect = self.image.get_rect()
 
         #Start each new ship at the bottom middle of the screen.
